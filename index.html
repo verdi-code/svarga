@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Svarga Dimsum</title>
+  <link rel="stylesheet" href="css/styles.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Bungee+Inline&family=Caesar+Dressing&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">SVARGA</div>
+    <ul class="nav-menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Produk</a></li>
+      <li><a href="#">Testimoni</a></li>
+      <li><a href="#Tentang">Tentang Kami</a></li>
+    </ul>
+    <a href="#" class="order-button">Pesan</a>
+  </header>
+      <!-- Home -->
+  <section class="hero">
+    <h1 class="tagline"><span>CASTOME</span> DIMSAM MU SEKARANG!!!</h1>
+    <a href="#castome"><button class="cta-button">CASTOME</button></a>
+
+    <div class="slider">
+      <button class="prev">&#10094;</button>
+      <div class="slide-container">
+        <div class="slide"><img src="img/cheese.png" alt="Dimsum 1"></div>
+        <div class="slide active"><img src="img/dimsum.png" alt="Dimsum 2"></div>
+        <div class="slide"><img src="img/mentai.png" alt="Dimsum 3"></div>
+      </div>
+      <button class="next">&#10095;</button>
+    </div>
+
+        <div class="dots">
+      <span class="dot"></span>
+      <span class="dot active"></span>
+      <span class="dot"></span>
+    </div>
+  </section>
+      <!-- Tentang -->
+  <section class="kenapa-section" >
+    <div class="kenapa-container">
+      <div class="kenapa-side">
+        <video autoplay muted loop>
+          <source src="img/svarga.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="kenapa-info">
+        <h2>Kenapa Dimsum Svarga?</h2>
+
+         <div class="kenapa-card">
+          <img src="img/icon1.png" alt="Resep Khas" />
+          <p><strong>Resep Khas Keluarga</p></strong>
+        </div>
+        <div class="kenapa-card">
+          <img src="img/icon2.png" alt="Halal dan Fresh" />
+          <p><strong>100% Halal & Fresh</p></strong>
+        </div>
+        <div class="kenapa-card">
+          <img src="img/icon3.png" alt="Cepat dan Higienis" />
+          <p><strong>Cepat & Higienis</p></strong>
+        </div>
+      </div>
+        <div class="kenapa-side">
+          <video autoplay muted loop>
+            <source src="img/svarga2.mp4" type="video/mp4">
+          </video>
+        </div>
+    </div>
+  </section>
+
+  <section class="svarga-section" id="Tentang">
+      <h2>Tentang Kami</h2>
+      <div class="svarga-container">
+        <div class="svarga-side">
+          <img src="img/svarga.jpg" alt="Ruko">
+        </div>
+        <div class="svarga-desc">
+          <h1>Svarga Foodies</h1>
+          <br>
+          <p>
+            Kami menyediakan Dimsum dengan 
+            kualitas bintang 5 harga kaki lima.
+            <br>
+            100% Halal
+            <br>
+            Buka setiap hari, Open untuk Resseler, Suplyer Caffe, dll.
+            <br>
+            Alamat:
+            <br>
+            Jl.Raya Abdul Gani no2 ,Jatimulya,
+            Cilodong Depok. 
+          </p>
+        </div>
+      </div>
+  </section>
+
+  <section class="castome-section" id="castome">
+    <h2>CASTOME DIMSUM</h2>
+    <div class="castome-container">
+      <div class="castome-wrapper">
+        <input type="checkbox" id="check1" class="checkbox-img">
+        <label for="check1" class="checkbox-label">
+          <img src="img/cheese.png" alt="Gambar 1">
+        </label>
+        <div class="castome-wrapper">
+        <input type="checkbox" id="check2" class="checkbox-img">
+        <label for="check2" class="checkbox-label">
+          <img src="img/dimsum.png" alt="Gambar 1">
+        </label>
+      </div>
+      <div class="castome-wrapper">
+        <input type="checkbox" id="check3" class="checkbox-img">
+        <label for="check3" class="checkbox-label">
+          <img src="img/mentai.png" alt="Gambar 1">
+        </label>
+    </div>
+  </section>
+
+  <script src="js/main.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      pagination: { el: '.swiper-pagination' },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,473 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Svarga Dimsum</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Bungee+Inline&family=Caesar+Dressing&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #000000, #1a1a1a);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
+  transition: background-color 0.4s ease;
+}
+
+.logo {
+  font-family: 'Caesar Dressing', cursive;
+  font-size: 2.5em;
+  color: #fff;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  font-size: 1.2em;
+  font-family: 'Baloo 2', sans-serif;
+}
+
+.nav-menu li a {
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+.nav-menu li a:hover,
+.nav-menu li a.active {
+  color: #f58e00;
+  border-bottom: 2px solid #f58e00;
+}
+
+.order-button {
+  background-color: #fff;
+  color: #f58e00;
+  padding: 10px 26px;
+  font-size: 1em;
+  font-weight: 700;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.order-button:hover {
+  background-color: #ffe0b2;
+  color: #d46f00;
+}
+
+.hero {
+  min-height: 100vh;
+  background: url('../img/bg.jpg') no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+  text-align: center;
+}
+
+.tagline {
+  font-family: 'Bungee Inline', cursive;
+  font-size: 2.5em;
+  text-shadow: 2px 2px 5px #000;
+  margin-bottom: 20px;
+  animation: fadeInDown 1s;
+}
+
+.cta-button {
+  background-color: #FFD700;
+  color: #000;
+  padding: 12px 24px;
+  font-size: 1.1em;
+  font-weight: bold;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #e6c200;
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  max-width: 1000px;
+  width: 100%;
+  position: relative;
+  margin-top: 40px;
+  animation: fadeInUp 1.5s;
+}
+
+.slide-container {
+  display: flex;
+  transition: transform 0.6s ease;
+  gap: 2em;
+}
+
+.slide {
+  flex-shrink: 0;
+  width: 290px;
+  opacity: 0.4;
+  transform: scale(0.9);
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.slide.active {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0 10px #000);
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+.slide img:hover {
+  transform: scale(1.05);
+}
+
+button.prev,
+button.next {
+  background: none;
+  border: none;
+  font-size: 2.5em;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+button.prev {
+  left: 10px;
+}
+
+button.next {
+  right: 10px;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0.5;
+  transition: all 0.3s;
+}
+
+.dot.active {
+  opacity: 1;
+  transform: scale(1.3);
+}
+
+.kenapa-section {
+  padding: 80px 20px;
+  background: url('../img/ss.jpg') fixed center center/cover;
+}
+
+.kenapa-container {
+  max-width: 1200px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  animation: fadeInUp 1.5s;
+}
+
+.kenapa-side video {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 20px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+}
+
+.kenapa-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.kenapa-info h2 {
+  background-color: #f37000;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 0 0 20px 20px;
+  margin-bottom: 30px;
+}
+
+.kenapa-card {
+  background: #f37000;
+  border-radius: 15px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: white;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.kenapa-card:hover {
+  transform: translateY(-5px);
+}
+
+.kenapa-card img {
+  width: 60px;
+}
+
+.kenapa-card p {
+  margin: 0;
+  font-size: 1.1em;
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .kenapa-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Animasi scroll masuk */
+.kenapa-card,
+.kenapa-info h2 {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease-in-out;
+}
+
+.kenapa-card.active,
+.kenapa-info h2.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover efek */
+.kenapa-card:hover {
+  transform: scale(1.05);
+  background-color: #ffa94d;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Responsive menu toggle */
+.menu-toggle {
+  display: none;
+  font-size: 2em;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 30px 0;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .nav-menu.active {
+    transform: translateY(0);
+  }
+
+  .order-button {
+    position: static;
+    transform: none;
+    margin-top: 10px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <!-- HTML content sama seperti sebelumnya -->
+  <!DOCTYPE html>
+
+  <header class="navbar">
+    <div class="menu-toggle">&#9776;</div>
+    <div class="logo">SVARGA</div>
+    <ul class="nav-menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Produk</a></li>
+      <li><a href="#">Testimoni</a></li>
+      <li><a href="#Tentang">Tentang Kami</a></li>
+      <li><a href="#">Kontak</a></li>
+    </ul>
+    <a href="#" class="order-button">Pesan</a>
+  </header>
+      <!-- Home -->
+  <section class="hero">
+    <h1 class="tagline"><span>SURGA RASA DALAM</span> SETIAP GIGITAN!!!</h1>
+    <button class="cta-button">Lihat Produk</button>
+
+    <div class="slider">
+      <button class="prev">&#10094;</button>
+      <div class="slide-container">
+        <div class="slide"><img src="img/dimsum.png" alt="Dimsum 1"></div>
+        <div class="slide active"><img src="img/dimsum.png" alt="Dimsum 2"></div>
+        <div class="slide"><img src="img/dimsum.png" alt="Dimsum 3"></div>
+      </div>
+      <button class="next">&#10095;</button>
+    </div>
+
+        <div class="dots">
+      <span class="dot"></span>
+      <span class="dot active"></span>
+      <span class="dot"></span>
+    </div>
+  </section>
+      <!-- Tentang -->
+  <section class="kenapa-section" id="Tentang">
+    <div class="kenapa-container">
+      <div class="kenapa-side">
+        <video autoplay muted loop>
+          <source src="img/svarga.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="kenapa-info">
+        <h2>Kenapa Dimsum Svarga?</h2>
+
+         <div class="kenapa-card">
+          <img src="img/icon1.png" alt="Resep Khas" />
+          <p><strong>Resep Khas Keluarga</p></strong>
+        </div>
+        <div class="kenapa-card">
+          <img src="img/icon2.png" alt="Halal dan Fresh" />
+          <p><strong>100% Halal & Fresh</p></strong>
+        </div>
+        <div class="kenapa-card">
+          <img src="img/icon3.png" alt="Cepat dan Higienis" />
+          <p><strong>Cepat & Higienis</p></strong>
+        </div>
+      </div>
+        <div class="kenapa-side">
+          <video autoplay muted loop>
+            <source src="img/svarga2.mp4" type="video/mp4">
+          </video>
+        </div>
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script>
+    ScrollReveal().reveal('.tagline', { delay: 200, origin: 'top', distance: '50px' });
+    ScrollReveal().reveal('.slider', { delay: 400, origin: 'bottom', distance: '50px' });
+    ScrollReveal().reveal('.kenapa-info', { delay: 200, origin: 'right', distance: '100px' });
+    ScrollReveal().reveal('.kenapa-side', { delay: 200, origin: 'left', distance: '100px' });
+    // Toggle menu responsive
+const menuBtn = document.querySelector('.menu-toggle');
+const navMenu = document.querySelector('.nav-menu');
+
+menuBtn.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
+});
+
+// Parallax Effect
+window.addEventListener("scroll", function () {
+  const hero = document.querySelector(".hero");
+  hero.style.backgroundPositionY = ${window.scrollY * 0.5}px;
+});
+
+// Slider Logic
+let slides = document.querySelectorAll(".slide");
+let dots = document.querySelectorAll(".dot");
+let index = 1;
+
+const updateSlider = () => {
+  document.querySelector(".slide.active")?.classList.remove("active");
+  document.querySelector(".dot.active")?.classList.remove("active");
+  slides[index].classList.add("active");
+  dots[index].classList.add("active");
+
+  const slideContainer = document.querySelector(".slide-container");
+  slideContainer.style.transform = translateX(-${index * (slides[0].offsetWidth + 32)}px);
+};
+
+document.querySelector(".prev").addEventListener("click", () => {
+  index = (index - 1 + slides.length) % slides.length;
+  updateSlider();
+});
+
+document.querySelector(".next").addEventListener("click", () => {
+  index = (index + 1) % slides.length;
+  updateSlider();
+});
+
+// Scroll animation on reveal
+const reveals = document.querySelectorAll(".kenapa-card, .kenapa-info h2");
+
+function reveal() {
+  for (let i = 0; i < reveals.length; i++) {
+    let windowHeight = window.innerHeight;
+    let revealTop = reveals[i].getBoundingClientRect().top;
+    let revealPoint = 150;
+
+    if (revealTop < windowHeight - revealPoint) {
+      reveals[i].classList.add("active");
+    }
+  }
+}
+
+window.addEventListener("scroll", reveal);
+  </script>
+</body>
+</html>
